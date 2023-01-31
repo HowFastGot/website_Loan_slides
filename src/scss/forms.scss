@@ -1,0 +1,154 @@
+//<BUTTON>============================================================================
+.btn {
+	display: inline-flex;
+	height: 39px;
+	padding: 12px 25px;
+	justify-content: center;
+	align-items: center;
+	background-color: #f68038;
+	transition: all .3s ease 0s;
+	&:hover {
+		background: #b86029;
+	}
+/* 	&._fw {
+		width: 100%;
+	} */
+}
+//</BUTTON>============================================================================
+
+//<Select>============================================================================
+.select {
+	position: relative;
+	&__item {
+		position: relative;
+	}
+	&__title {
+		border: 1px solid #d9d9d9;
+		color: #000;
+		background-color: #fff;
+		cursor: pointer;
+		border-radius: 4px;
+		@media(max-width: $md2+px) {
+			font-size: 18px;
+		}
+	}
+	&__value {
+		display: flex;
+		font-size: 14px;
+		height: 30px;
+		padding: 0 15px;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+		span {
+			height: 1em;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+		}
+		&:before {
+			content: "";
+			display: inline-block;
+			transition: all 0.3s ease 0s;
+			width: 11px;
+			height: 7px;
+			background: #000;//стрелки вставляют
+		}
+	}
+	&__input {
+		width: 100%;
+		background-color: transparent;
+		height: 100%;
+	}
+	&__options {
+		color: #000;
+		display: none;
+		position: absolute;
+		top: 29px;
+		border-radius: 0 0 4px 4px;
+		min-width: 100%;
+		left: 0;
+		background-color: #fff;
+		border-top: 0;
+		border: 1px solid #d9d9d9;
+		font-size: 14px;
+		padding: 10px 0 5px 0;
+		@media(max-width: $md2+px) {
+			font-size: 18px;
+		}
+	}
+}
+//</Select>============================================================================
+
+//<INPUT>============================================================================
+ input[type="text"],
+ input[type="email"],
+ input[type="tel"],
+ textarea {
+ 	-webkit-appearance: none;
+ 	-moz-appearance: none;
+ 	appearance: none;
+ }
+
+.input {
+	border-radius: 0 !important;
+	width: 100%;
+	display: block;
+	padding: 0 10px;
+	&._focus {
+	}
+	&._error {
+	}
+}
+textarea.input {
+	resize: none;
+	padding: 0 0;
+}
+//</INPUT>============================================================================
+
+//<CheckBox>============================================================================
+.checkbox {
+	position: relative;
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+		&:checked + .checkbox__text:before {
+			background: yellow; // фото галочки быть должно
+		}
+	}
+	&__text {
+		display: inline-flex;
+		align-items: center;
+		position: relative;
+		font-size: 26px;
+		color: #fff;
+		letter-spacing: -0.3px;
+		line-height: calc(20 / 16);
+		cursor: pointer;
+		&:before {
+			content: "";
+			align-self: flex-start;
+			margin: 0 14px 0 0;
+			flex: 0 0 25px;
+			left: 0;
+			top: 0;
+			width: 15px;
+			height: 15px;
+			border: 3px solid #a7a9ac;
+		}
+	}
+/* 	a {
+		color: #fff;
+		text-decoration: underline;
+		@media (min-width: 992px) {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	} */
+}
+//</CheckBox>============================================================================
